@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "-d",
+                "out",
+                "src/com/hostelmanagement/**/*.java",
+                "src/com/hostelmanagement/ui/**/*.java",
+                "src/com/hostelmanagement/dao/**/*.java",
+                "src/com/hostelmanagement/models/**/*.java",
+                "src/com/hostelmanagement/services/**/*.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$javac"],
+            "detail": "Compile Java files"
+        },
+        {
+            "label": "package",
+            "type": "shell",
+            "command": "jar",
+            "args": [
+                "cfv",
+                "HostelManagement.jar",
+                "-C",
+                "out",
+                "."
+            ],
+            "dependsOn": "compile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Package compiled files into a JAR"
+        }
+    ]
+}
