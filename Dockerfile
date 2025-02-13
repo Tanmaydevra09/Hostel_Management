@@ -9,7 +9,6 @@ COPY ./out /app/out
 COPY ./resources /app/resources
 COPY ./lib/mysql-connector-j-9.0.0.jar /app/lib/mysql-connector-j-9.0.0.jar
 
-
-# Step 4: Define the command to run your Java application with the correct classpath
-CMD ["java", "-cp", "/app/out:/app/resources:/app/lib/mysql-connector-j-9.0.0.jar", "com.hostelmanagement.Main"]
+# Step 4: Define the command to run your Java application with the correct classpath and headless mode enabled
+CMD ["java", "-Djava.awt.headless=true", "-cp", "/app/out:/app/resources:/app/lib/mysql-connector-j-9.0.0.jar", "com.hostelmanagement.Main"]
 
