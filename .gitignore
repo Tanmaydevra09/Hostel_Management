@@ -1,8 +1,24 @@
-out/
+# Ignore compiled class files
 *.class
+
+# Ignore all JAR files except mysql-connector-j-9.0.0.jar
 *.jar
+!lib/mysql-connector-j-9.0.0.jar
+
+# Ignore log files
 *.log
+
+# Ignore macOS-specific files
 .DS_Store
+
+# Ignore IDE configurations
 .idea/
 .vscode/
 
+# Ignore everything in out/ except for its contents
+out/
+!out/*
+
+# Ignore lib/ directory contents except for mysql-connector-j-9.0.0.jar
+lib/*
+!lib/mysql-connector-j-9.0.0.jar
