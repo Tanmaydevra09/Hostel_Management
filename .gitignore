@@ -22,3 +22,4 @@ out/
 # Ignore lib/ directory contents except for mysql-connector-j-9.0.0.jar
 lib/*
 !lib/mysql-connector-j-9.0.0.jar
+
