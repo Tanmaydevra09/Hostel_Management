@@ -234,7 +234,7 @@ CREATE TABLE audit_logs (
     record_id VARCHAR(50),
     description TEXT,
     ip_address VARCHAR(45),
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- =========================================================
@@ -255,4 +255,4 @@ CREATE INDEX idx_notifications_user ON notifications(user_id);
 CREATE INDEX idx_notifications_read ON notifications(is_read);
 CREATE INDEX idx_user_otps_user ON user_otps(user_id);
 CREATE INDEX idx_audit_user ON audit_logs(user_id);
-CREATE INDEX idx_audit_timestamp ON audit_logs(timestamp);
+CREATE INDEX idx_audit_timestamp ON audit_logs(created_at);
