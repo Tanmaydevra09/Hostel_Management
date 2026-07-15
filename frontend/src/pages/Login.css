@@ -1,0 +1,277 @@
+/* ── Login Page ────────────────────────────────────────── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background: #EEF5EF;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left panel — branding */
+.login-left {
+  flex: 1;
+  background: linear-gradient(150deg, #1B1D22 0%, #2A2D35 60%, #1a2a1f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.login-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(95, 203, 141, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(169, 197, 255, 0.12) 0%, transparent 60%);
+}
+.login-left-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 380px;
+}
+.login-brand-icon {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, #5FCB8D, #4AB87A);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto 24px;
+  box-shadow: 0 16px 40px rgba(95, 203, 141, 0.40);
+}
+.login-brand-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+.login-brand-title span { color: #5FCB8D; }
+.login-brand-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.login-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+  width: 100%;
+}
+.login-feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.login-feature-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.login-feature-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.80);
+}
+.login-feature-sub {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 1px;
+}
+
+/* Right panel — form */
+.login-right {
+  width: 480px;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 48px;
+  overflow-y: auto;
+  position: relative;
+}
+.login-right::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5FCB8D, #A9C5FF);
+}
+.login-form-wrap {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Logo on right (mobile fallback) */
+.login-logo-mobile {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.login-logo-icon-sm {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #5FCB8D, #4AB87A);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Form heading */
+.login-heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+.login-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Form */
+.login-form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px; }
+.password-field { position: relative; }
+.password-field .form-control { padding-right: 44px; }
+.pwd-toggle {
+  position: absolute;
+  right: 12px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  transition: var(--transition);
+  padding: 4px;
+}
+.pwd-toggle:hover { color: var(--primary-dark); }
+
+.login-btn {
+  justify-content: center;
+  height: 46px;
+  font-size: 0.95rem;
+}
+
+/* Demo accounts */
+.login-demo {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.login-demo-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 12px;
+}
+.demo-btns { display: flex; flex-direction: column; gap: 8px; }
+.demo-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+.demo-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.demo-btn-creds {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+}
+
+/* ── OTP View ─────────────────────────────────────────── */
+.otp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.btn-back {
+  align-self: flex-start;
+  color: var(--text-secondary);
+  margin-bottom: -8px;
+}
+.btn-back:hover { color: var(--text-primary); }
+
+.otp-header { text-align: center; margin-bottom: 6px; }
+.otp-icon-wrap {
+  width: 68px; height: 68px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 0 8px rgba(95, 203, 141, 0.08);
+}
+.otp-form { display: flex; flex-direction: column; gap: 24px; }
+.otp-inputs { display: flex; gap: 10px; justify-content: center; }
+.otp-input {
+  width: 50px; height: 58px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: var(--radius-md);
+  padding: 0;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.2s;
+  font-family: 'Inter', monospace;
+}
+.otp-input:focus {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(95, 203, 141, 0.15);
+  outline: none;
+  transform: translateY(-2px);
+}
+.otp-input:not(:placeholder-shown) {
+  border-color: var(--primary);
+  background: rgba(95, 203, 141, 0.06);
+}
+.otp-resend { text-align: center; margin-top: 4px; }
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .login-left { display: none; }
+  .login-right { width: 100%; padding: 40px 28px; }
+  .login-logo-mobile { display: flex; }
+}
+@media (max-width: 480px) {
+  .login-right { padding: 32px 20px; }
+  .otp-input { width: 42px; height: 50px; font-size: 1.3rem; }
+  .otp-inputs { gap: 8px; }
+}

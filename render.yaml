@@ -1,0 +1,39 @@
+# render.yaml — Infrastructure as Code for Render
+# This file tells Render how to build and deploy your app.
+# Connect your GitHub repo to Render and it will auto-detect this file.
+
+services:
+  - type: web
+    name: hostel-hub
+    runtime: node
+    plan: free
+    buildCommand: "cd frontend && npm install && npm run build && cd ../backend && npm install"
+    startCommand: "cd backend && node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5001
+      - key: DB_HOST
+        sync: false  # Set manually in Render dashboard (PlanetScale host)
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        sync: false  # Set manually in Render dashboard
+      - key: DB_PASSWORD
+        sync: false  # Set manually in Render dashboard
+      - key: DB_NAME
+        sync: false  # Set manually in Render dashboard
+      - key: DB_SSL
+        value: true  # Required for PlanetScale
+      - key: JWT_SECRET
+        generateValue: true  # Render will auto-generate a secure random secret
+      - key: JWT_EXPIRES_IN
+        value: 24h
+      - key: FRONTEND_URL
+        sync: false  # Set to your Render URL after first deploy (e.g. https://hostel-hub.onrender.com)
+      - key: MAIL_USERNAME
+        sync: false  # Your Gmail address
+      - key: MAIL_PASSWORD
+        sync: false  # Your Gmail App Password
+
