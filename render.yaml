@@ -17,7 +17,7 @@ services:
       - key: DB_HOST
         sync: false  # Set manually in Render dashboard (PlanetScale host)
       - key: DB_PORT
-        value: 3306
+        sync: false  # Railway proxy uses non-standard port (e.g. 38405)
       - key: DB_USER
         sync: false  # Set manually in Render dashboard
       - key: DB_PASSWORD
